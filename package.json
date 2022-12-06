@@ -1,0 +1,19 @@
+{
+  "name": "2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon -q -L"
+  },
+  "nodemonConfig": {
+    "events": {
+      "start": "clear"
+    },
+    "quiet": true
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
