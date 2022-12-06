@@ -1,4 +1,4 @@
-import { formatedInput } from "./formatedInput.js";
+import { formatedInput } from "./input/formatedInput.js";
 
 const points = {
   shapes: {

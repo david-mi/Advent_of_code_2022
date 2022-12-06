@@ -1,4 +1,4 @@
-import { input } from "./input.js";
+import { input } from "./input/input.js";
 import { findLetterPriority } from "./utils.js";
 
 let letterPrioritiesSum = 0;

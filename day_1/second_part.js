@@ -4,3 +4,4 @@ const threeBiggestElvesCaloriesSum = (
   elfSumCaloriesDescendingOrder[0] + elfSumCaloriesDescendingOrder[1] + elfSumCaloriesDescendingOrder[2]
 );
 
+

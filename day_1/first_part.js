@@ -1,4 +1,4 @@
-import { input } from "./input.js";
+import { input } from "./input/input.js";
 
 export const elfSumCaloriesDescendingOrder =
   input.split(/\n{2,}/)

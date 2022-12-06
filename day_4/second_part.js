@@ -1,5 +1,5 @@
-import { formatedInput } from "./formatedInput.js";
-import { testInput } from "./test_input.js";
+import { formatedInput } from "./input/formatedInput.js";
+import { testInput } from "./input/test_input.js";
 
 let containCount = 0;
 
@@ -14,5 +14,3 @@ for (const [firstPair, secondPair] of formatedInput) {
     containCount++;
   }
 }
-
-debugger;
