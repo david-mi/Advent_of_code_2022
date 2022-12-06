@@ -1,4 +1,5 @@
 import { input } from "./input.js";
+import { findLetterPriority } from "./utils.js";
 
 let letterPrioritiesSum = 0;
 
@@ -22,10 +23,4 @@ for (const rucksack of rucksacks) {
       delete firstCompartment[currentLetter];
     }
   }
-}
-
-function findLetterPriority(letter) {
-  return letter === letter.toUpperCase()
-    ? letter.charCodeAt() - 65 + 27
-    : letter.charCodeAt() - 96;
 }

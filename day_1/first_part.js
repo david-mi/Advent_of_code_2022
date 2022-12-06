@@ -10,4 +10,3 @@ export const elfSumCaloriesDescendingOrder =
     .sort((a, b) => b - a);
 
 const biggestCaloriesFromOneElve = elfSumCaloriesDescendingOrder[0];
-// result is 66719
