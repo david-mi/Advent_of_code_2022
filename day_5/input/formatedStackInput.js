@@ -1,4 +1,5 @@
-const stack = `[M][S][S]
+const stack = `
+[M][S][S]
 [M][N][L][T][Q]
 [G][P][C][F][G][T]
 [B][J][D][P][V][F][F]
@@ -7,32 +8,42 @@ const stack = `[M][S][S]
 [P][V][S][S][B][B][Z][M][C]
 [R][H][N][P][J][Q][B][C][F]`;
 
-const formatedStack =
-  [
-    ["MSS"],
-    ["MNLTQ"],
-    ["GPCFGT"],
-    ["BJDPVFF"],
-    ["DDGCZHBG"],
-    ["CGQLNDMDQ"],
-    ["PVSSBBZMC"],
-    ["RHNPJQBCF"]
-  ];
+// const formatedStack =
+//   [
+//     ["MSS"],
+//     ["MNLTQ"],
+//     ["GPCFGT"],
+//     ["BJDPVFF"],
+//     ["DDGCZHBG"],
+//     ["CGQLNDMDQ"],
+//     ["PVSSBBZMC"],
+//     ["RHNPJQBCF"]
+//   ];
 
+const formatedStack = [
+  ["GBDCPR"],
+  ["GVH"],
+  ["MPJDQSN"],
+  ["MNCDGLSP"],
+  ["SLFPCNBJ"],
+  ["STGVZDBQ"],
+  ["QTFHMZB"],
+  ["FBDMC"],
+  ["GQCF"]
+];
 
-const numberRange = `1   2   3   4   5   6   7   8   9`;
 
 function makeStackObjet() {
-  const startRange = Number(numberRange[0]);
-  const endRange = Number(numberRange.at(-1));
+  const endRange = formatedStack.length;
 
   const stackObject = {};
 
-  for (let i = startRange; i <= endRange; i++) {
-    stackObject[i] = formatedStack[i - 1];
+  for (let i = 1; i <= endRange; i++) {
+    stackObject[i] = [...formatedStack[i - 1][0]];
   }
 
-  return stackObject;
+  return { stackObject, endRange };
 }
 
-export const stackObject = makeStackObjet();
+export const { stackObject, endRange } = makeStackObjet();
+

@@ -1,4 +1,4 @@
-export const formatedActions = [
+export const actions = [
   [1, 7, 4],
   [3, 4, 7],
   [4, 3, 4],
@@ -500,6 +500,6 @@ export const formatedActions = [
   [3, 6, 9],
   [3, 9, 5],
   [1, 2, 6],
-  [1, 5, 7],
+  [1, 5, 7]
+]
 
-];
