@@ -4,30 +4,35 @@ import { actions } from "./input/formatedActions.js";
 import { stackObjectTest, endRangeTest } from "./input/formatedStackInputTest.js";
 import { actionsTest } from "./input/formatedActionsTest.js";
 
+
 export function moveCrates(reverse) {
+  const stackObjectCopy = structuredClone(stackObject);
+
   for (const [move, from, to] of actions) {
-    const removedCrates = stackObject[from]
+    const removedCrates = stackObjectCopy[from]
       .splice(0, move);
 
     if (reverse) {
       removedCrates.reverse();
     }
 
-    stackObject[to].unshift(...removedCrates);
+    stackObjectCopy[to].unshift(...removedCrates);
   }
+
+  return stackObjectCopy;
 }
 
-function getTopOfEachStack() {
+export function getTopOfEachStack(movedStackedObject) {
   let result = "";
 
   for (let i = 1; i <= endRange; i++) {
-    if (stackObject[i].length > 0) {
-      result += stackObject[i][0];
+    if (movedStackedObject[i].length > 0) {
+      result += movedStackedObject[i][0];
     }
   }
 
   return result;
 }
 
-moveCrates(false);
-const topOfEachStack = getTopOfEachStack();
+const movedStackedObject = moveCrates(true);
+const topOfEachStack = getTopOfEachStack(movedStackedObject);
