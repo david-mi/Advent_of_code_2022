@@ -1,6 +1,14 @@
 export const testInputs = {
-  firstTestInput: "bvwbjplbgvbhsrlpgdmjqwftvncz",
-  secondTestInput: "nppdvjthqldpwncqszvftbrmjlhg",
-  thirdTestInput: "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg",
-  fourthTestInput: "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"
+  firstPart: {
+    firstTestInput: "bvwbjplbgvbhsrlpgdmjqwftvncz",
+    secondTestInput: "nppdvjthqldpwncqszvftbrmjlhg",
+    thirdTestInput: "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg",
+    fourthTestInput: "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"
+  },
+  secondPart: {
+    firstTestInput: "mjqjpqmgbljsphdztnvjfqwrcgsmlb",
+    secondTestInput: "bvwbjplbgvbhsrlpgdmjqwftvncz",
+    thirdTestInput: "nppdvjthqldpwncqszvftbrmjlhg",
+    fourthTestInput: "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg"
+  }
 };
