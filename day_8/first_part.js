@@ -9,7 +9,7 @@ function getVisibleTrees(input) {
   for (let y = 0; y < input.length; y++) {
     const currentLine = input[y];
 
-    for (let x = 0; x < currentLine.length; x++) {
+    xLoop: for (let x = 0; x < currentLine.length; x++) {
       const currentTreeHeight = Number(currentLine[x]);
 
       // if tree is on a edge, add it to visible trees
@@ -36,6 +36,12 @@ function getVisibleTrees(input) {
           }
         }
 
+        if (hasFoundBiggerTreeInTheLeft === false) {
+          visibleTrees[`${y}, ${x}`] = currentTreeHeight;
+          visibleTreeCount++;
+          continue xLoop;
+        }
+
         //check at the right of current tree is any tree is bigger
         let hasFoundBiggerTreeInTheRight = false;
 
@@ -46,6 +52,12 @@ function getVisibleTrees(input) {
             hasFoundBiggerTreeInTheRight = true;
             break;
           }
+        }
+
+        if (hasFoundBiggerTreeInTheRight === false) {
+          visibleTrees[`${y}, ${x}`] = currentTreeHeight;
+          visibleTreeCount++;
+          continue xLoop;
         }
 
         // check above the current tree if any tree is bigger
@@ -60,6 +72,12 @@ function getVisibleTrees(input) {
           }
         }
 
+        if (hasFoundBiggerTreeAbove === false) {
+          visibleTrees[`${y}, ${x}`] = currentTreeHeight;
+          visibleTreeCount++;
+          continue xLoop;
+        }
+
         // check below the current tree if any tree is bigger
         let hasFoundBiggerTreeBelow = false;
 
@@ -72,12 +90,7 @@ function getVisibleTrees(input) {
           }
         }
 
-        if (
-          hasFoundBiggerTreeInTheLeft === false ||
-          hasFoundBiggerTreeInTheRight === false ||
-          hasFoundBiggerTreeAbove === false ||
-          hasFoundBiggerTreeBelow === false
-        ) {
+        if (hasFoundBiggerTreeBelow === false) {
           visibleTrees[`${y}, ${x}`] = currentTreeHeight;
           visibleTreeCount++;
         }
@@ -88,6 +101,7 @@ function getVisibleTrees(input) {
   return visibleTreeCount;
 }
 
-
-const visibleCount = getVisibleTrees(parsedInput);
+console.time();
+const visibleCount = getVisibleTrees(parsedInput); // 20ms
+console.timeEnd();
 debugger;
