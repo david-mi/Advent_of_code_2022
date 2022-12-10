@@ -101,7 +101,4 @@ function getVisibleTrees(input) {
   return visibleTreeCount;
 }
 
-console.time();
-const visibleCount = getVisibleTrees(parsedInput); // 20ms
-console.timeEnd();
-debugger;
+const visibleCount = getVisibleTrees(parsedInput);
